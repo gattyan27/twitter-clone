@@ -15,7 +15,7 @@ class CreateFollowersTable extends Migration
     {
         Schema::create('followers', function (Blueprint $table) {
             $table->unsignedInteger('following_id')->comment('フォローしているユーザID');
-            $table->unsignedInteger('following_id')->comment('フォローされているユーザID');
+            $table->unsignedInteger('followed_id')->comment('フォローされているユーザID');
 
             $table->index('following_id');
             $table->index('followed_id');
