@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'screen_name', 'name', 'profile_image', 'email', 'password',
     ];
 
     /**
@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function followers()
+    {
+        return $this->belongsToMany(self::class, 'followers', 'followed_id', 'following_id');
+    }
+    public function follows()
+    {
+        return $this->belongsToMany(self::class, 'followers', 'followed_id', 'following_id');
+    }
 }
