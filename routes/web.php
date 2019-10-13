@@ -23,5 +23,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function() {
     
     // ユーザ関連
-    Route::resource('users', 'UsersController');
-})
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show', 'edit', 'update']]);
+});
