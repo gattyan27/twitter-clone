@@ -94,7 +94,7 @@ class UsersController extends Controller
     // フォロー
     public function follow(User $user)
     {
-        $follower = auth()->$user();
+        $follower = auth()->user();
         // フォローしているか
         $is_following = $follower->isFollowing($user->id);
         if(!$is_following) {
@@ -106,10 +106,10 @@ class UsersController extends Controller
 
     public function unfollow(User $user)
     {
-        $follower = auth()->$user();
+        $follower = auth()->user();
         // フォローしているか
         $is_following = $follower->isFollowing($user->id);
-        if(is_following) {
+        if($is_following) {
             $follower->unfollow($user->id);
             return back();
         }
