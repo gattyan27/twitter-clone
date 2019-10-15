@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use App\models\User;
 use App\models\Tweet;
-use App\models\Favorite;
+use App\models\Follower;
 
 class UsersController extends Controller
 {
