@@ -1,0 +1,14 @@
+{
+    "Register":"アカウント作成",
+    "Login":"ログイン",
+    "Logout":"ログアウト",
+    "E-Mail Address":"メールアドレス",
+    "Password":"パスワード",
+    "Confirm Password":"パスワード確認",
+    "Remember Me":"保存する",
+    "Forgot Your Password?":"パスワードを忘れた場合はこちら",
+    "Reset Password":"パスワードをリセット",
+    "Send Password Reset Link":"リンクをメールに送信",
+    "Account Name":"アカウント名",
+    "Name":"名前"
+}

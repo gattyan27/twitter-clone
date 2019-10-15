@@ -63,4 +63,25 @@ class Tweet extends Model
 
         return;
     }
+
+    public function getEditTweet(Int $user_id, Int $tweet_id)
+    {
+        return $this->where('user_id', $user_id)->where('id', $tweet_id)->first();
+    }
+
+    // ツイート内容更新
+    public function tweetUpdate(Int $tweet_id, Array $data)
+    {
+        $this->id = $tweet_id;
+        $this->text = $data['text'];
+        $this->update();
+
+        return;
+    }
+
+    // ツイート削除
+    public function tweetDestroy(Int $user_id, Int $tweet_id)
+    {
+        return $this->where('user_id', $user_id)->where('id', $tweet_id)->delete();
+    }
 }
