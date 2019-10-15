@@ -55,6 +55,9 @@
                                     <a href="{{ url('tweets/create') }}" class="btn btn-md btn-primary">ツイートする
                                     </a>
                                 </li>
+                                <li class="nav-item mr-5">
+                                    <a href="{{ url('users') }}" class="col-md-8 mb-3 text-right">ユーザ一覧 <i class="fas fa-users" class="fa-fw"></i> </a>
+                                </li>
                                 <li class="nav-item">
                                     <img src="{{ asset('storage/profile_image/' .auth()->user()->profile_image) }}" class="rounded-circle" width="50" height="50">
                                 </li>
