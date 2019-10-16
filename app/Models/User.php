@@ -76,6 +76,7 @@ class User extends Authenticatable
         return (boolean) $this->followers()->where('followed_id', $user_id)->first(['id']);
     }
 
+    // プロフィール更新処理
     public function updateProfile(Array $params)
     {
         if (isset($params['profile_image'])){

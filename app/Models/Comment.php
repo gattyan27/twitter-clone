@@ -18,16 +18,19 @@ class Comment extends Model
         'text'
     ];
 
+    // リレーションの親子関係
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
+    // ツイートのコメント取得
     public function getComments(Int $tweet_id)
     {
         return $this->with('user')->where('tweet_id', $tweet_id)->get();
     }
 
+    // コメント保存処理
     public function commentStore(Int $user_id, Array $data)
     {
         $this->user_id = $user_id;

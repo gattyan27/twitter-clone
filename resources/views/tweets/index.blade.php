@@ -8,7 +8,7 @@
             @foreach ($timelines as $timeline)
                 <div class="col-md-8 mb-3">
                     <div class="card">
-                        <div class="card-haeder p-3 w-100 d-flex">
+                        <div class="card-header p-3 w-100 d-flex">
                             <img src="{{ asset('storage/profile_image/' .$timeline->user->profile_image) }}" class="rounded-circle" width="50" height="50">
                             <div class="ml-2 d-flex flex-column">
                                 <p class="mb-0">{{ $timeline->user->name }}</p>
