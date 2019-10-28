@@ -3,7 +3,7 @@ services:
   web:
     build: ./docker/web
     ports:
-      - "8000:80"
+      - "8080:80"
     volumes:
       - ./:/var/www/twitter_pj
     working_dir: /var/www/twitter_pj
@@ -13,7 +13,7 @@ services:
   db:
     build: ./docker/db
     ports:
-      - 3366:3306
+      - 3306:3306
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -25,7 +25,7 @@ services:
   s3:
     image: minio/minio
     ports:
-      - "9001:9000"
+      - "9002:9000"
     volumes:
       - ./docker/minio/data:/data
     command: server /data

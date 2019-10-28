@@ -44,6 +44,12 @@ class Tweet extends Model
         return $this->where('user_id', $user_id)->count();
     }
 
+    // 全てのツイート取得
+    public function getAllTweets()
+    {
+        return $this->all()->sortBy('created_at');
+    }
+
     // ツイート一覧
     public function getTimeLines(Int $user_id, Array $follow_ids)
     {
