@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'AllTweetsController@index')->name('alltweets.index');
+Route::get('/', 'HomeController@index')->name('home');
+
+// Route::get('/', 'AllTweetsController@index')->name('alltweets.index');
 
 Auth::routes();
 
