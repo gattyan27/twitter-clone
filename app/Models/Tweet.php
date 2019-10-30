@@ -47,7 +47,7 @@ class Tweet extends Model
     // 全てのツイート取得
     public function getAllTweets()
     {
-        return $this->all()->sortBy('created_at');
+        return $this->all()->sortByDesc('created_at');
     }
 
     // ツイート一覧

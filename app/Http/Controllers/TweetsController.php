@@ -19,8 +19,8 @@ class TweetsController extends Controller
     {
         $user = auth()->user();
         $follow_ids = $follower->followingIds($user->id);
-        // followed_idだけ抜き出す
-        $following_ids = $follow_ids->pluck('followed_id')->toArray();
+        // following_idだけ抜き出す
+        $following_ids = $follow_ids->pluck('following_id')->toArray();
 
         $timelines = $tweet->getTimelines($user->id, $following_ids);
 
